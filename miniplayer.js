@@ -16,23 +16,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Get current movie name from URL
     const currentPage = window.location.pathname.split('/').pop().split('.')[0];
-    const videoId = trailerVideos[currentPage] || 'dQw4w9WgXcQ'; // Default video
+    const videoId = trailerVideos[currentPage] || ''; // Default video
     
-    // Load the video automatically
+    // Load the video automatically (player starts visible by default)
     videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=0`;
     
     // Close button functionality
     closeButton.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        miniPlayer.classList.remove('active');
+        miniPlayer.classList.add('hidden');
         videoIframe.src = ''; // Stop the video
     });
     
-    
+    // Click anywhere outside the mini-player to reopen it
     document.addEventListener('click', function(e) {
-        if (!miniPlayer.classList.contains('active') && !e.target.closest('.mini-player-container')) {
-            miniPlayer.classList.add('active');
+        if (!miniPlayer.contains(e.target) && miniPlayer.classList.contains('hidden')) {
+            miniPlayer.classList.remove('hidden');
             videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=0`;
         }
     });
