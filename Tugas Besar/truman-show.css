@@ -1,0 +1,252 @@
+/* Truman Show Page Specific Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #3a5a78;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #4a6a88;
+    padding: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+nav ul li a:hover {
+    background-color: #5a7a98;
+    border-radius: 4px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.movie-review {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.movie-header {
+    display: flex;
+    padding: 2rem;
+    background: linear-gradient(135deg, #3a5a78 0%, #6a8aa8 100%);
+    color: white;
+}
+
+.movie-poster-large {
+    width: 300px;
+    height: auto;
+    margin-right: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.movie-info h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.rating {
+    color: #f1c40f;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.review-content {
+    padding: 2rem;
+}
+
+.review-content h2 {
+    color: #3a5a78;
+    margin: 1.5rem 0 1rem;
+    border-bottom: 2px solid #3a5a78;
+    padding-bottom: 0.5rem;
+}
+
+.review-content h3 {
+    color: #4a6a88;
+    margin: 1.2rem 0 0.8rem;
+}
+
+.pros-cons {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.pros, .cons {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.pros {
+    background-color: #e8f4f8;
+    border: 1px solid #a5c6d7;
+}
+
+.cons {
+    background-color: #f8e8e8;
+    border: 1px solid #d7a5a5;
+}
+
+.pros li {
+    margin-left: 5px;
+}
+
+.cons li {
+    margin-left: 5px;
+}
+
+.pros h4, .cons h4 {
+    margin-bottom: 0.8rem;
+    color: #3a5a78;
+}
+
+.verdict {
+    background-color: #e8e8e8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid #3a5a78;
+}
+
+footer {
+    background-color: #3a5a78;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #f1c40f;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .movie-header {
+        flex-direction: column;
+    }
+    
+    .movie-poster-large {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .pros-cons {
+        flex-direction: column;
+    }
+}
+
+/* Mini Video Player Styles */
+.mini-player-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.mini-player-container.hidden {
+    transform: translateX(calc(100% + 20px));
+}
+
+.mini-player-header {
+    background-color: #5a7a98; /* Match your theme color */
+    color: white;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.mini-player-title {
+    font-weight: bold;
+}
+
+.mini-player-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.mini-player-content {
+    padding: 10px;
+}
+
+.mini-player-video {
+    width: 100%;
+    height: 169px; /* 16:9 aspect ratio */
+    border-radius: 4px;
+}
+
+/* Back to Top Button */
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+#backToTop:hover {
+    background-color: #f1c40f;
+    color: #2c3e50;
+    transform: scale(1.1);
+}
